@@ -2,14 +2,16 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
-import MenuTeaser from './components/MenuTeaser';
+import SanctuaryOverview from './components/SanctuaryOverview';
+import SeatTracker from './components/SeatTracker';
+import Guestbook from './components/Guestbook';
 import BookingSystem from './components/BookingSystem';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="min-h-screen bg-cream flex flex-col font-sans select-none selection:bg-terracotta/10 selection:text-terracotta">
-      {/* Sticky Glassmorphism Navigation */}
+      {/* Sticky Glassmorphism Navigation & Ambient Lofi Player */}
       <Navbar />
 
       <main className="flex-grow flex flex-col">
@@ -19,10 +21,16 @@ function App() {
         {/* Value Proposition feature grid */}
         <Features />
 
-        {/* Category-filtered Menu teaser */}
-        <MenuTeaser />
+        {/* Sensory Sanctuary Details & Images */}
+        <SanctuaryOverview />
 
-        {/* Reservations & Space rental systems */}
+        {/* Live Seat Availability Map */}
+        <SeatTracker />
+
+        {/* Testimonials and customer reviews panel (Rich Cozy Contrast Block) */}
+        <Guestbook />
+
+        {/* Reservations & Space bookings CTA */}
         <BookingSystem />
       </main>
 
