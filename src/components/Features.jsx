@@ -14,29 +14,29 @@ export default function Features() {
       description: 'Equipped with silent zones, high-speed fiber internet, and power plugs next to every seat for seamless study or remote work.'
     },
     {
-      icon: <Sparkles className="h-6 w-6 text-espresso/80" />,
+      icon: <Sparkles className="h-6 w-6 text-cream-300" />,
       title: 'Culinary Comforts',
       description: 'From premium stone-ground Kyoto matcha lattes to hot flakey butter croissants and savory meals.'
     }
   ];
 
   return (
-    <section className="bg-cream-50 py-8 px-4 sm:px-6 lg:px-8 border-y border-espresso/5">
+    <section className="bg-espresso-200 py-10 px-4 sm:px-6 lg:px-8 border-y border-espresso/20">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
           {valueProps.map((prop, idx) => (
             <div
               key={idx}
-              className="flex flex-row md:flex-col items-start text-left p-4.5 md:p-6 bg-white rounded-2xl border border-espresso/5 shadow-sm hover:shadow-md transition-shadow duration-300 gap-4 md:gap-0"
+              className="flex flex-row md:flex-col items-start text-left p-5 md:p-6 bg-espresso-300 rounded-2xl border border-espresso-100/20 shadow-md hover:border-espresso-100/40 transition-all duration-300 gap-4"
             >
-              <div className="mb-0 md:mb-4 p-2.5 md:p-3 bg-cream rounded-xl border border-espresso/[0.03] shrink-0">
+              <div className="p-2.5 md:p-3 bg-espresso-200 rounded-xl border border-white/5 shrink-0">
                 {prop.icon}
               </div>
               <div>
-                <h3 className="font-serif text-sm md:text-lg font-bold text-espresso mb-1 md:mb-2">
+                <h3 className="font-serif text-sm md:text-base font-bold text-cream-50 mb-1 md:mb-2">
                   {prop.title}
                 </h3>
-                <p className="font-sans text-[11px] sm:text-xs text-charcoal/80 leading-relaxed">
+                <p className="font-sans text-[11px] sm:text-xs text-cream-200/80 leading-relaxed">
                   {prop.description}
                 </p>
               </div>

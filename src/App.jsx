@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import SanctuaryOverview from './components/SanctuaryOverview';
-import SeatTracker from './components/SeatTracker';
+import SeatAvailability from './components/SeatAvailability';
 import Guestbook from './components/Guestbook';
 import BookingSystem from './components/BookingSystem';
 import Footer from './components/Footer';
@@ -24,8 +24,8 @@ function App() {
         {/* Sensory Sanctuary Details & Images */}
         <SanctuaryOverview />
 
-        {/* Live Seat Availability Map */}
-        <SeatTracker />
+        {/* Seating Nooks & Availability Showcase */}
+        <SeatAvailability />
 
         {/* Testimonials and customer reviews panel (Rich Cozy Contrast Block) */}
         <Guestbook />

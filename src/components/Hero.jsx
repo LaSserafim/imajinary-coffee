@@ -2,10 +2,10 @@ import React from 'react';
 import { Coffee, ArrowRight } from 'lucide-react';
 
 export default function Hero() {
-  const handleScrollToMenu = () => {
-    const menuElement = document.getElementById('digital-menu');
-    if (menuElement) {
-      menuElement.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollToNooks = () => {
+    const nooksElement = document.getElementById('seat-availability');
+    if (nooksElement) {
+      nooksElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -28,10 +28,10 @@ export default function Hero() {
           </p>
 
           <button
-            onClick={handleScrollToMenu}
+            onClick={handleScrollToNooks}
             className="inline-flex items-center gap-2 px-5 py-3 bg-espresso hover:bg-espresso-100 text-cream-50 font-semibold text-[10px] sm:text-xs uppercase tracking-widest rounded-xl transition-all duration-300 transform active:scale-95 shadow-sm cursor-pointer hover:shadow-md"
           >
-            Explore the Menu
+            Explore Cozy Nooks
             <ArrowRight className="h-3 w-3 text-sage" />
           </button>
         </div>

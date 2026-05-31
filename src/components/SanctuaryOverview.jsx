@@ -37,7 +37,7 @@ export default function SanctuaryOverview() {
         <h2 className="font-serif text-3xl sm:text-4xl font-bold text-espresso mt-3 mb-2">
           Inside Our Sanctuary
         </h2>
-        <p className="font-sans text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+        <p className="font-sans text-xs sm:text-sm text-espresso/80 leading-relaxed">
           Every corner of Imaginary Coffee is designed intentionally to offer a sensory retreat in Semarang.
         </p>
       </div>
@@ -66,13 +66,13 @@ export default function SanctuaryOverview() {
               </div>
 
               {/* Text Description Card */}
-              <div className="w-full lg:w-1/2 text-left space-y-4">
-                <div className="flex items-center gap-2">
-                  <div className="p-2 bg-cream rounded-lg border border-espresso/[0.03]">
+              <div className="w-full lg:w-1/2 text-left space-y-4 bg-cream-50 p-6 sm:p-8 rounded-3xl border border-espresso/10 shadow-sm">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 bg-cream-200 rounded-lg border border-espresso/5">
                     {exp.icon}
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-sage">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-sage-dark">
                       {exp.subtitle}
                     </span>
                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-espresso">
@@ -81,12 +81,12 @@ export default function SanctuaryOverview() {
                   </div>
                 </div>
 
-                <p className="font-sans text-xs sm:text-sm text-charcoal/90 leading-relaxed font-normal">
+                <p className="font-sans text-xs sm:text-sm text-espresso/80 leading-relaxed font-normal">
                   {exp.description}
                 </p>
 
                 {/* Cozy quote details */}
-                <div className="pl-4 border-l-2 border-terracotta/40 italic text-xs text-charcoal/70">
+                <div className="pl-4 border-l-2 border-terracotta/40 italic text-xs text-espresso/60">
                   Crafted for cozy Pleburan days.
                 </div>
               </div>
