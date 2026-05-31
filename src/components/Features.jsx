@@ -21,23 +21,25 @@ export default function Features() {
   ];
 
   return (
-    <section className="bg-cream-50 py-12 px-4 sm:px-6 lg:px-8 border-y border-espresso/5">
+    <section className="bg-cream-50 py-8 px-4 sm:px-6 lg:px-8 border-y border-espresso/5">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {valueProps.map((prop, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-start text-left p-6 bg-white rounded-2xl border border-espresso/5 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="flex flex-row md:flex-col items-start text-left p-4.5 md:p-6 bg-white rounded-2xl border border-espresso/5 shadow-sm hover:shadow-md transition-shadow duration-300 gap-4 md:gap-0"
             >
-              <div className="mb-4 p-3 bg-cream rounded-xl border border-espresso/[0.03]">
+              <div className="mb-0 md:mb-4 p-2.5 md:p-3 bg-cream rounded-xl border border-espresso/[0.03] shrink-0">
                 {prop.icon}
               </div>
-              <h3 className="font-serif text-lg font-bold text-espresso mb-2">
-                {prop.title}
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-charcoal/80 leading-relaxed">
-                {prop.description}
-              </p>
+              <div>
+                <h3 className="font-serif text-sm md:text-lg font-bold text-espresso mb-1 md:mb-2">
+                  {prop.title}
+                </h3>
+                <p className="font-sans text-[11px] sm:text-xs text-charcoal/80 leading-relaxed">
+                  {prop.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

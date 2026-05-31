@@ -71,8 +71,76 @@ export default function MenuTeaser() {
         </div>
       </div>
 
-      {/* Menu Grid (Prevents layout shifting by using fixed height or minimal layout flex) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[380px]">
+      {/* Mobile View: Horizontal List Cards (Visible on screens smaller than md) */}
+      <div className="block md:hidden space-y-3.5 min-h-[380px]">
+        {filteredItems.map((item) => (
+          <div
+            key={item.id}
+            className="flex bg-white rounded-2xl border border-espresso/5 p-3 gap-4 shadow-sm hover:shadow-md transition-all duration-300"
+          >
+            {/* Left: Square Image */}
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-cream-100">
+              {imageErrors[item.id] ? (
+                <div className="w-full h-full flex flex-col items-center justify-center p-3 bg-cream-50 text-sage/60 select-none">
+                  <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+              ) : (
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  onError={() => handleImageError(item.id)}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              )}
+              {item.tag && (
+                <span className="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 text-[7px] font-bold uppercase tracking-wider bg-espresso text-cream-50 rounded">
+                  {item.tag}
+                </span>
+              )}
+            </div>
+
+            {/* Right: Info details and Direct checkout link */}
+            <div className="flex-1 flex flex-col justify-between min-w-0">
+              <div>
+                <div className="flex justify-between items-start gap-2">
+                  <h3 className="font-serif text-sm font-bold text-espresso truncate">
+                    {item.name}
+                  </h3>
+                  <span className="font-sans font-extrabold text-xs text-sage whitespace-nowrap">
+                    {formatPrice(item.price)}
+                  </span>
+                </div>
+                <p className="text-[10px] text-charcoal/80 leading-relaxed font-normal mt-1 line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* Action buttons */}
+              <div className="flex items-center justify-between border-t border-espresso/5 pt-1.5 mt-1.5">
+                <span className="text-[8px] uppercase font-bold tracking-widest text-espresso/40">
+                  Pleburan
+                </span>
+                
+                <a
+                  href={getWhatsAppOrderLink(item.name, item.price)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] font-bold text-espresso hover:text-terracotta transition-colors duration-300"
+                >
+                  Order Now
+                  <ArrowRight className="h-2.5 w-2.5 text-sage" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop View: original 3-Column Grid (Visible on md screens and above) */}
+      <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6 min-h-[380px]">
         {filteredItems.map((item) => (
           <div
             key={item.id}
@@ -137,7 +205,6 @@ export default function MenuTeaser() {
                 </a>
               </div>
             </div>
-
           </div>
         ))}
       </div>
