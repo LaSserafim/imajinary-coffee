@@ -1,7 +1,7 @@
 import React from 'react';
-import { Coffee, ArrowRight } from 'lucide-react';
+import { Coffee, ArrowRight, ShoppingBag } from 'lucide-react';
 
-export default function Hero() {
+export default function Hero({ setCurrentPage }) {
   const handleScrollToNooks = () => {
     const nooksElement = document.getElementById('seat-availability');
     if (nooksElement) {
@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <header className="relative bg-cream px-4 py-8 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <header className="relative bg-cream px-4 py-8 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
         
         {/* Left Side: Premium Editorial Copy */}
@@ -27,13 +27,22 @@ export default function Hero() {
             A cozy aesthetic hideout in the heart of Pleburan, Semarang. Crafted for deep focus, warm conversations, and artisanal brews.
           </p>
 
-          <button
-            onClick={handleScrollToNooks}
-            className="inline-flex items-center gap-2 px-5 py-3 bg-espresso hover:bg-espresso-100 text-cream-50 font-semibold text-[10px] sm:text-xs uppercase tracking-widest rounded-xl transition-all duration-300 transform active:scale-95 shadow-sm cursor-pointer hover:shadow-md"
-          >
-            Explore Cozy Nooks
-            <ArrowRight className="h-3 w-3 text-sage" />
-          </button>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <button
+              onClick={() => setCurrentPage && setCurrentPage('menu')}
+              className="inline-flex items-center gap-2 px-5 py-3 bg-terracotta hover:bg-[#c95941] text-cream-50 font-semibold text-[10px] sm:text-xs uppercase tracking-widest rounded-xl transition-all duration-300 transform active:scale-95 shadow-sm cursor-pointer hover:shadow-md"
+            >
+              Order Online
+              <ShoppingBag className="h-3 w-3 text-cream-50" />
+            </button>
+            <button
+              onClick={handleScrollToNooks}
+              className="inline-flex items-center gap-2 px-5 py-3 bg-espresso hover:bg-espresso-100 text-cream-50 font-semibold text-[10px] sm:text-xs uppercase tracking-widest rounded-xl transition-all duration-300 transform active:scale-95 shadow-sm cursor-pointer hover:shadow-md"
+            >
+              Explore Cozy Nooks
+              <ArrowRight className="h-3 w-3 text-sage" />
+            </button>
+          </div>
         </div>
 
         {/* Right Side: Split-screen Ambient Image */}
